@@ -27,8 +27,8 @@ function headerHiddenPanelBasketVisibility() {
 
 let headerProfile = document.querySelector('.header-main__pic_profile');
 let headerBasket = document.querySelector('.header-main__pic_basket');
-headerProfile.onclick = headerHiddenPanelProfileVisibility;
-headerBasket.onclick = headerHiddenPanelBasketVisibility;
+// headerProfile.onclick = headerHiddenPanelProfileVisibility;
+// headerBasket.onclick = headerHiddenPanelBasketVisibility;
 
 //Функция видимости меню поиска в шапке
 function headerMainSearchVisibility() {
@@ -38,7 +38,7 @@ function headerMainSearchVisibility() {
 }
 
 let headerSearch = document.querySelector('.header-main__pic_search');
-headerSearch.onclick = headerMainSearchVisibility;
+// headerSearch.onclick = headerMainSearchVisibility;
 
 
 //Выпадающее меню главного меню (пока с общим списком для всех пунктов)

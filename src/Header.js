@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import script from './js/script.js';
+import slider from './js/slider.js';
+
 
 const Header = () => (
   <header className="header">
