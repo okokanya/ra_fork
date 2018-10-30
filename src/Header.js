@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import HeaderDD from './HeaderDD';
+import HeaderLkMenu from './HeaderLkMenu';
 import script from "./js/script.js";
 import slider from "./js/slider.js";
 import headerLogo from "./img/headerLogo.png";
@@ -63,14 +64,15 @@ const Header = () => (
       </div>
       <div className="header-main__hidden-panel hidden-panel">
         <div className="wrapper">
-          <div className="hidden-panel__profile">
+        <HeaderLkMenu />
+          {/* <div className="hidden-panel__profile">
             <a href="#">Личный кабинет</a>
             <a href="favorite.html">
               <i className="fa fa-heart-o" aria-hidden="true" />
               Избранное
             </a>
             <a href="#">Выйти</a>
-          </div>
+          </div> */}
           <div className="hidden-panel__basket basket-dropped">
             <div className="basket-dropped__title">В вашей корзине:</div>
             <div className="basket-dropped__product-list product-list">
