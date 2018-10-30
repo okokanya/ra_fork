@@ -31,11 +31,11 @@ let headerBasket = document.querySelector('.header-main__pic_basket');
 // headerBasket.onclick = headerHiddenPanelBasketVisibility;
 
 //Функция видимости меню поиска в шапке
-function headerMainSearchVisibility() {
-    document.querySelector('.header-main__search').classList.toggle('header-main__search_active');
-    document.querySelector('.header-main__pic_search').classList.toggle('header-main__pic_search_is-hidden');
+// function headerMainSearchVisibility() {
+//     document.querySelector('.header-main__search').classList.toggle('header-main__search_active');
+//     document.querySelector('.header-main__pic_search').classList.toggle('header-main__pic_search_is-hidden');
 
-}
+// }
 
 let headerSearch = document.querySelector('.header-main__pic_search');
 // headerSearch.onclick = headerMainSearchVisibility;
