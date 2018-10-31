@@ -18,17 +18,18 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
         <BrowserRouter>
+        <div>
+          <Header />
           <Switch>
             <Route path="/favorite" component={Favorite} />
             <Route path="/order" component={Order} />
             <Route path="/orderdone" component={OrderDone} />
-
             <Route path="/catalogue" component={Catalogue} />
             <Route path="/product" component={ProductCardDesktop} />
             <Route exact path="/" component={MainPage} />
           </Switch>
+          </div>
         </BrowserRouter>
         <Footer />
       </div>

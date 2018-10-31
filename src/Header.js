@@ -4,40 +4,45 @@ import HeaderLkMenu from './HeaderLkMenu';
 import headerLogo from "./img/headerLogo.png";
 
 
-function headerHiddenPanelBasketVisibility() {
-  document.querySelector('.hidden-panel__profile').classList.remove('hidden-panel__profile_visible');
-  document.querySelector('.hidden-panel__basket').classList.add('hidden-panel__basket_visible');
-  if (document.querySelector('.header-main__pic_profile_menu_is-active')) {
-      document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
-      document.querySelector('.header-main__pic_profile_menu_is-active').classList.toggle('header-main__pic_profile_menu_is-active');
-  } else {
-      document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
-      document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
-  }
+// function headerHiddenPanelBasketVisibility() {
+//   document.querySelector('.hidden-panel__profile').classList.remove('hidden-panel__profile_visible');
+//   document.querySelector('.hidden-panel__basket').classList.add('hidden-panel__basket_visible');
+//   if (document.querySelector('.header-main__pic_profile_menu_is-active')) {
+//       document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
+//       document.querySelector('.header-main__pic_profile_menu_is-active').classList.toggle('header-main__pic_profile_menu_is-active');
+//   } else {
+//       document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
+//       document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
+//   }
 
-}
+// }
 
-function headerHiddenPanelProfileVisibility() {
-  document.querySelector('.hidden-panel__basket').classList.remove('hidden-panel__basket_visible');
-  document.querySelector('.hidden-panel__profile').classList.add('hidden-panel__profile_visible');
-  if (document.querySelector('.header-main__pic_basket_menu_is-active')) {
-      document.querySelector('.header-main__pic_basket_menu_is-active').classList.toggle('header-main__pic_basket_menu_is-active');
-      document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
-  } else {
-      document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
-      document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
-  }
+// function headerHiddenPanelProfileVisibility() {
+//   document.querySelector('.hidden-panel__basket').classList.remove('hidden-panel__basket_visible');
+//   // document.querySelector('.hidden-panel__profile').classList.add('hidden-panel__profile_visible');
+//   if (document.querySelector('.header-main__pic_basket_menu_is-active')) {
+//       document.querySelector('.header-main__pic_basket_menu_is-active').classList.toggle('header-main__pic_basket_menu_is-active');
+//       document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
+//   } else {
+//       document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
+//       document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
+//   }
 
-}
+// }
+
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isLkOpened: false,
-      isBasketOpened: false
+      isBasketOpened: false,
     };
   }
+
+handleClick = () => {
+  this.setState({ isLkOpened: !this.state.isLkOpened });
+};
   render() {
     return (
   <header className="header">
@@ -80,11 +85,11 @@ class Header extends React.Component {
           <div className="header-main__pics">
             <div className="header-main__pic header-main__pic_search" />
             <div className="header-main__pic_border" />
-            <div className="header-main__pic header-main__pic_profile" onClick={headerHiddenPanelProfileVisibility}>
+            <div className="header-main__pic header-main__pic_profile" onClick={this.handleClick} >
               <div className="header-main__pic_profile_menu" />
             </div>
             <div className="header-main__pic_border" />
-            <div className="header-main__pic header-main__pic_basket"  onClick={headerHiddenPanelBasketVisibility}>
+            <div className="header-main__pic header-main__pic_basket"  onClick={this.handleClick} >
               <div className="header-main__pic_basket_full">1</div>
               <div className="header-main__pic_basket_menu" />
             </div>
