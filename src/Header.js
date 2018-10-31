@@ -1,12 +1,45 @@
 import React, { Component } from "react";
 import HeaderDD from './HeaderDD';
 import HeaderLkMenu from './HeaderLkMenu';
-import script from "./js/script.js";
-import slider from "./js/slider.js";
 import headerLogo from "./img/headerLogo.png";
 
 
-const Header = () => (
+function headerHiddenPanelBasketVisibility() {
+  document.querySelector('.hidden-panel__profile').classList.remove('hidden-panel__profile_visible');
+  document.querySelector('.hidden-panel__basket').classList.add('hidden-panel__basket_visible');
+  if (document.querySelector('.header-main__pic_profile_menu_is-active')) {
+      document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
+      document.querySelector('.header-main__pic_profile_menu_is-active').classList.toggle('header-main__pic_profile_menu_is-active');
+  } else {
+      document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
+      document.querySelector('.header-main__pic_basket_menu').classList.toggle('header-main__pic_basket_menu_is-active');
+  }
+
+}
+
+function headerHiddenPanelProfileVisibility() {
+  document.querySelector('.hidden-panel__basket').classList.remove('hidden-panel__basket_visible');
+  document.querySelector('.hidden-panel__profile').classList.add('hidden-panel__profile_visible');
+  if (document.querySelector('.header-main__pic_basket_menu_is-active')) {
+      document.querySelector('.header-main__pic_basket_menu_is-active').classList.toggle('header-main__pic_basket_menu_is-active');
+      document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
+  } else {
+      document.querySelector('.header-main__hidden-panel').classList.toggle('header-main__hidden-panel_visible');
+      document.querySelector('.header-main__pic_profile_menu').classList.toggle('header-main__pic_profile_menu_is-active');
+  }
+
+}
+
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLkOpened: false,
+      isBasketOpened: false
+    };
+  }
+  render() {
+    return (
   <header className="header">
     <div className="top-menu">
       <div className="wrapper">
@@ -47,11 +80,11 @@ const Header = () => (
           <div className="header-main__pics">
             <div className="header-main__pic header-main__pic_search" />
             <div className="header-main__pic_border" />
-            <div className="header-main__pic header-main__pic_profile header-main__search_active'">
+            <div className="header-main__pic header-main__pic_profile" onClick={headerHiddenPanelProfileVisibility}>
               <div className="header-main__pic_profile_menu" />
             </div>
             <div className="header-main__pic_border" />
-            <div className="header-main__pic header-main__pic_basket">
+            <div className="header-main__pic header-main__pic_basket"  onClick={headerHiddenPanelBasketVisibility}>
               <div className="header-main__pic_basket_full">1</div>
               <div className="header-main__pic_basket_menu" />
             </div>
@@ -64,15 +97,7 @@ const Header = () => (
       </div>
       <div className="header-main__hidden-panel hidden-panel">
         <div className="wrapper">
-        <HeaderLkMenu />
-          {/* <div className="hidden-panel__profile">
-            <a href="#">Личный кабинет</a>
-            <a href="favorite.html">
-              <i className="fa fa-heart-o" aria-hidden="true" />
-              Избранное
-            </a>
-            <a href="#">Выйти</a>
-          </div> */}
+        <HeaderLkMenu isOpened={this.state.isLkOpened} />
           <div className="hidden-panel__basket basket-dropped">
             <div className="basket-dropped__title">В вашей корзине:</div>
             <div className="basket-dropped__product-list product-list">
@@ -180,11 +205,11 @@ const Header = () => (
       </div>
     </nav>
 
-  <HeaderDD />
+  <HeaderDD isBasketOpened={this.state.isBasketOpened} />
 
     <script src="js/script.js" />
     <script src="js/slider.js" />
   </header>
-);
+)}};
 
 export default Header;
