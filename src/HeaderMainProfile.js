@@ -3,6 +3,7 @@ import Favorite from "./Favorite";
 import style from "./css/style.css";
 import fontAwesomeMin from "./css/fontAwesomeMin.css";
 import { Link } from "react-router-dom";
+import productListPic1 from  './img/productListPic1.jpg';
 
 
 const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
@@ -42,7 +43,7 @@ const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
           <div className="basket-dropped__product-list product-list">
             <div className="product-list__item">
               <a className="product-list__pic">
-                <img src="img/product-list__pic_1.jpg" alt="product" />{" "}
+                <img src={productListPic1} alt="product" />{" "}
               </a>
               <a href="#" className="product-list__product">
                 Ботинки женские, Baldinini
@@ -59,7 +60,7 @@ const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
 
             <div className="product-list__item">
               <a className="product-list__pic">
-                <img src="img/product-list__pic_1.jpg" alt="product" />{" "}
+                <img src={productListPic1} alt="product" />{" "}
               </a>
               <a href="#" className="product-list__product">
                 Ботинки женские, Baldinini
@@ -75,7 +76,7 @@ const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
             </div>
             <div className="product-list__item">
               <a className="product-list__pic">
-                <img src="img/product-list__pic_1.jpg" alt="product" />{" "}
+                <img src={productListPic1} alt="product" />{" "}
               </a>
               <a href="#" className="product-list__product">
                 Ботинки женские, Baldinini
@@ -91,7 +92,7 @@ const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
             </div>
             <div className="product-list__item">
               <a className="product-list__pic">
-                <img src="img/product-list__pic_1.jpg" alt="product" />{" "}
+                <img src={productListPic1} alt="product" />{" "}
               </a>
               <a href="#" className="product-list__product">
                 Ботинки женские, Baldinini
