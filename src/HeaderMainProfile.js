@@ -3,17 +3,14 @@ import Favorite from "./Favorite";
 import style from "./css/style.css";
 import fontAwesomeMin from "./css/fontAwesomeMin.css";
 import { Link } from "react-router-dom";
-import headerLogo from "./img/headerLogo.png";
 
 
-const HeaderMainProfile = ({ isOpened }) => {
-  
-  console.log("!!!", isOpened);
-  return (
+const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
+    return (
 
     <div
       className={
-        isOpened
+        isLkOpened || isBasketOpened
           ? "header-main__hidden-panel hidden-panel header-main__hidden-panel_visible "
           : "hidden-panel__profile"
       }
@@ -21,7 +18,7 @@ const HeaderMainProfile = ({ isOpened }) => {
       <div className="wrapper">
         <div
           className={
-            isOpened
+            isLkOpened
               ? "hidden-panel__profile hidden-panel__profile_visible"
               : "hidden-panel__profile"
           }
@@ -33,7 +30,14 @@ const HeaderMainProfile = ({ isOpened }) => {
           </a>
           <a href="#">Выйти</a>
         </div>
-        <div className="hidden-panel__basket basket-dropped">
+        <div
+          className={
+            isBasketOpened
+              ? "hidden-panel__basket basket-dropped hidden-panel__basket_visible"
+              : "hidden-panel__basket basket-dropped"
+          }
+        >
+
           <div className="basket-dropped__title">В вашей корзине:</div>
           <div className="basket-dropped__product-list product-list">
             <div className="product-list__item">

@@ -7,8 +7,7 @@ import headerLogo from "./img/headerLogo.png";
 
 
 
-const HeaderMain = ({ isOpened, func }) => {
-  console.log("!!!", func);
+const HeaderMain = ({ isBasketOpened, isLkOpened , funcLK, funcBasket }) => {
   return (
     <div className="header-main">
     <div className="header-main__wrapper wrapper">
@@ -28,20 +27,26 @@ const HeaderMain = ({ isOpened, func }) => {
         <div className="header-main__pics">
           <div className="header-main__pic header-main__pic_search" />
           <div className="header-main__pic_border" />
-          <div className="header-main__pic header-main__pic_profile" onClick={func} >
-            {/* <div className="header-main__pic_profile_menu " /> */}
+          <div className="header-main__pic header-main__pic_profile" onClick={funcLK} >
             <div
       className={
-        isOpened
+        isLkOpened
           ? "header-main__pic_profile_menu header-main__pic_profile_menu_is-active"
           : "header-main__pic_profile_menu"
-      }
-     />
+      } />
           </div>
           <div className="header-main__pic_border" />
-          <div className="header-main__pic header-main__pic_basket"  onClick={func} >
+          
+          <div className="header-main__pic header-main__pic_basket "  onClick={funcBasket} >
             <div className="header-main__pic_basket_full">1</div>
-            <div className="header-main__pic_basket_menu" />
+            
+          <div className={
+        isBasketOpened
+          ? "header-main__pic_basket_menu header-main__pic_basket_menu_is-active"
+          : "header-main__pic_basket_menu"
+      } />
+
+            {/* <div className="header-main__pic_basket_menu" /> */}
           </div>
         </div>
         <form className="header-main__search" action="#">
