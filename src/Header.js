@@ -66,9 +66,10 @@ class Header extends React.Component {
             </ul>
           </div>
         </div>
+        <HeaderMain isOpened={this.state.isLkOpened} func={this.handleClick} />
+
         <HeaderMainProfile isOpened={this.state.isLkOpened} />
 
-        <HeaderMain isOpened={this.state.isLkOpened} func={this.handleClick} />
 
         {/* <div className="header-main__hidden-panel hidden-panel">
         <div className="wrapper">

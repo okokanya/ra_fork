@@ -28,11 +28,18 @@ const HeaderMain = ({ isOpened, func }) => {
         <div className="header-main__pics">
           <div className="header-main__pic header-main__pic_search" />
           <div className="header-main__pic_border" />
-          <div className="header-main__pic header-main__pic_profile" onClick={this.handleClick} >
-            <div className="header-main__pic_profile_menu " />
+          <div className="header-main__pic header-main__pic_profile" onClick={func} >
+            {/* <div className="header-main__pic_profile_menu " /> */}
+            <div
+      className={
+        isOpened
+          ? "header-main__pic_profile_menu header-main__pic_profile_menu_is-active"
+          : "header-main__pic_profile_menu"
+      }
+     />
           </div>
           <div className="header-main__pic_border" />
-          <div className="header-main__pic header-main__pic_basket"  onClick={this.handleClick} >
+          <div className="header-main__pic header-main__pic_basket"  onClick={func} >
             <div className="header-main__pic_basket_full">1</div>
             <div className="header-main__pic_basket_menu" />
           </div>
