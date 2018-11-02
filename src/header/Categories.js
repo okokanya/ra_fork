@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-class HeaderDD extends Component {
-  render() {
-    return (
-
-  <div className="dropped-menu">
+const Categories = ({ isPanelOpen }) => (
+  <div
+    className={
+      isPanelOpen ? "dropped-menu dropped-menu_visible" : "dropped-menu"
+    }
+  >
     <div className="wrapper">
       <div className="dropped-menu__lists dropped-menu__lists_women">
         <h3 className="dropped-menu__list-title">Повод:</h3>
@@ -130,6 +131,6 @@ class HeaderDD extends Component {
       </div>
     </div>
   </div>
-  )}}
-  
-export default HeaderDD;
+);
+
+export default Categories;

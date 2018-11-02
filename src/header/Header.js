@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import HeaderDD from "./HeaderDD";
-import HeaderMainProfile from "./HeaderMainProfile";
-import HeaderMain from "./HeaderMain";
+import MainProfile from "./MainProfile";
+import Main from "./Main";
+import Categories from "./Categories";
 
 class Header extends React.Component {
   constructor(props) {
@@ -9,9 +9,15 @@ class Header extends React.Component {
     this.state = {
       isPanelOpen: false,
       isLkOpened: false,
-      isBasketOpened: false
+      isBasketOpened: false,
+      isSearchActive: false
     };
   }
+
+  handleMainCategories = () => {
+    this.setState({ isPanelOpen: !this.state.isPanelOpen });
+    console.log(this.state.isPanelOpen);
+  };
 
   handleClickLK = () => {
     this.setState({ isLkOpened: !this.state.isLkOpened });
@@ -22,6 +28,11 @@ class Header extends React.Component {
     this.setState({ isBasketOpened: !this.state.isBasketOpened });
     this.setState({ isLkOpened: false });
   };
+
+  handleClickSearch = () => {
+    this.setState({ isSearchActive: !this.state.isSearchActive });
+    console.log(this.state.isSearchActive);
+  }
 
   render() {
     return (
@@ -47,47 +58,74 @@ class Header extends React.Component {
             </ul>
           </div>
         </div>
-        <HeaderMain
+
+        <Main
           isLkOpened={this.state.isLkOpened}
           isBasketOpened={this.state.isBasketOpened}
           funcLK={this.handleClickLK}
           funcBasket={this.handleClickBasket}
+          handleClickSearch={this.handleClickSearch}
+          isSearchActive={this.isSearchActive}
         />
-
-        <HeaderMainProfile isBasketOpened={this.state.isBasketOpened} isLkOpened={this.state.isLkOpened} />
-
+        <MainProfile
+          isBasketOpened={this.state.isBasketOpened}
+          isLkOpened={this.state.isLkOpened}
+        />
         <nav className="main-menu">
           <div className="wrapper">
             <ul className="main-menu__items">
-              <li className="main-menu__item main-menu__item_sales">
+              <li
+                className="main-menu__item main-menu__item_sales"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Акции</a>
               </li>
-              <li className="main-menu__item main-menu__item_women">
+              <li
+                className="main-menu__item main-menu__item_women"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Женская обувь</a>
               </li>
-              <li className="main-menu__item main-menu__item_men">
+              <li
+                className="main-menu__item main-menu__item_men"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Мужская обувь</a>
               </li>
-              <li className="main-menu__item main-menu__item_kids">
+              <li
+                className="main-menu__item main-menu__item_kids"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Детская обувь</a>
               </li>
-              <li className="main-menu__item main-menu__item_accessories">
+              <li
+                className="main-menu__item main-menu__item_accessories"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Аксессуары</a>
               </li>
-              <li className="main-menu__item main-menu__item_home">
+              <li
+                className="main-menu__item main-menu__item_home"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Для дома</a>
               </li>
-              <li className="main-menu__item main-menu__item_brands">
+              <li
+                className="main-menu__item main-menu__item_brands"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Бренды</a>
               </li>
-              <li className="main-menu__item main-menu__item_new">
+              <li
+                className="main-menu__item main-menu__item_new"
+                onClick={this.handleMainCategories}
+              >
                 <a href="#">Новинки</a>
               </li>
             </ul>
           </div>
         </nav>
-
-        <HeaderDD isPanelOpen={this.state.isPanelOpen}  />
+        <Categories isPanelOpen={this.state.isPanelOpen} />
 
         <script src="js/script.js" />
         <script src="js/slider.js" />
