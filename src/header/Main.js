@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Categories from "./Categories";
-import Search from "./Search";
 import MainProfile from "./MainProfile";
-import LkMenu from "./LkMenu";
 import headerLogo from "../img/headerLogo.png";
 
 const Main = ({

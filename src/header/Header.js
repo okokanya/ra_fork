@@ -126,9 +126,6 @@ class Header extends React.Component {
           </div>
         </nav>
         <Categories isPanelOpen={this.state.isPanelOpen} />
-
-        <script src="js/script.js" />
-        <script src="js/slider.js" />
       </header>
     );
   }
