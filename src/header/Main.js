@@ -28,16 +28,14 @@ const Main = ({
           </a>
           <p>Обувь и аксессуары для всей семьи</p>
         </div>
-        <div className="header-main__profile">
+        <div className="header-main__profile"               
+>
           <div className="header-main__pics">
-            <div
+            <div 
               className={
                 isSearchActive
-
-                  ? 
-                  "header-main__pic header-main__pic_search header-main__pic_search_is-hidden" :
-                  "header-main__pic header-main__pic_search"
-                  
+                  ? "header-main__pic header-main__pic_search header-main__pic_search_is-hidden"
+                  : "header-main__pic header-main__pic_search"
               }
               onClick={handleClickSearch}
             />
@@ -72,14 +70,14 @@ const Main = ({
             </div>
           </div>
           <form
-            className={
+            className= {
               isSearchActive
-                ? 
-                "header-main__search header-main__search_active"
-                : "header-main__search" 
+                ? "header-main__search"
+                : "header-main__search header-main__search_active"
             }
             action="#"
-            onClick={handleClickSearch}          >
+            onClick={handleClickSearch}
+          >
             <input placeholder="Поиск" />
             <i className="fa fa-search" aria-hidden="true" />
           </form>
