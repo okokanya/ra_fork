@@ -65,7 +65,7 @@ class Header extends React.Component {
           funcLK={this.handleClickLK}
           funcBasket={this.handleClickBasket}
           handleClickSearch={this.handleClickSearch}
-          isSearchActive={this.isSearchActive}
+          isSearchActive={this.state.isSearchActive}
         />
         <MainProfile
           isBasketOpened={this.state.isBasketOpened}

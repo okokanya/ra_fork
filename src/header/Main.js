@@ -72,8 +72,9 @@ const Main = ({
           <form
             className= {
               isSearchActive
-                ? "header-main__search"
-                : "header-main__search header-main__search_active"
+                ? 
+                "header-main__search header-main__search_active": "header-main__search"
+                
             }
             action="#"
             onClick={handleClickSearch}
