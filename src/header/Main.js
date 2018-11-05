@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import MainPage from "../MainPage";
 import Categories from "./Categories";
 import MainProfile from "./MainProfile";
 import headerLogo from "../img/headerLogo.png";
@@ -21,15 +23,16 @@ const Main = ({
         <div className="header-main__logo">
           <a href="#">
             <h1>
-              <img src={headerLogo} alt="logotype" />
+              <Link to="/">
+                <img src={headerLogo} alt="logotype" />
+              </Link>
             </h1>
           </a>
           <p>Обувь и аксессуары для всей семьи</p>
         </div>
-        <div className="header-main__profile"               
->
+        <div className="header-main__profile">
           <div className="header-main__pics">
-            <div 
+            <div
               className={
                 isSearchActive
                   ? "header-main__pic header-main__pic_search header-main__pic_search_is-hidden"
@@ -68,11 +71,10 @@ const Main = ({
             </div>
           </div>
           <form
-            className= {
+            className={
               isSearchActive
-                ? 
-                "header-main__search header-main__search_active": "header-main__search"
-                
+                ? "header-main__search header-main__search_active"
+                : "header-main__search"
             }
             action="#"
             onClick={handleClickSearch}
