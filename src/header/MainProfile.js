@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import BasketItem from "./BasketItem";
 import productListPic1 from "../img/productListPic1.jpg";
 
@@ -19,10 +21,10 @@ const HeaderMainProfile = ({ isLkOpened, isBasketOpened, isPanelOpen }) => {
         }
       >
         <a href="#">Личный кабинет</a>
-        <a href="favorite.html">
+        <Link to="/favorite">
           <i className="fa fa-heart-o" aria-hidden="true" />
           Избранное
-        </a>
+        </Link>
         <a href="#">Выйти</a>
       </div>
       <div
