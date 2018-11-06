@@ -73,7 +73,8 @@ class Favorite extends Component {
               </div>
             </section>
             <section className="product-catalogue__item-list product-catalogue__item-list_favorite">
-              <FavItem />
+              <FavItem title={this.state.items[0].title} image={this.state.items[0].images[0]} 
+              brand={this.state.items[0].brand} />
             </section>
             <div className="product-catalogue__pagination">
               <div className="page-nav-wrapper">
