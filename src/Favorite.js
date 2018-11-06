@@ -14,7 +14,7 @@ class Favorite extends Component {
   }
 
   componentDidMount() {
-    fetch(apiConfig.base + apiConfig.featured)
+    fetch(apiConfig.base + apiConfig.products)
       .then(res => res.json())
       .then(
         result => {
