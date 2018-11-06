@@ -3,7 +3,6 @@ import styleFavorite from "./css/styleFavorite.css";
 import FavItem from "./FavItem";
 import apiConfig from "./apiConfig.js";
 
-
 class Favorite extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,17 @@ class Favorite extends Component {
       isLoaded: false,
       items: []
     };
+
+    // this.state.items.map((item, i) => {
+    //   let shoeProps = {
+    //     title: this.items.title,
+    //     pick: this.items[0].images[0],
+    //     brand: this.items.brand,
+    //     price: this.items.price
+    //   }
+    // })
   }
+
   componentDidMount() {
     fetch(apiConfig.base + apiConfig.featured)
       .then(res => res.json())
@@ -33,19 +42,18 @@ class Favorite extends Component {
           });
         }
       );
-
   }
 
   render() {
-      const { error, isLoaded, items } = this.state;
-      console.log(this.state)
+    const { error, isLoaded, items } = this.state;
+    console.log(this.state);
 
     if (error) {
       return <div>Error {error.message} </div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-    return (
+      return (
         <div className="wrapper wrapper_favorite">
           <div className="site-path">
             <ul className="site-path__items">
@@ -73,8 +81,17 @@ class Favorite extends Component {
               </div>
             </section>
             <section className="product-catalogue__item-list product-catalogue__item-list_favorite">
-              <FavItem title={this.state.items[0].title} pick={this.state.items[0].images[0]} 
-              brand={this.state.items[0].brand} price={this.state.items[0].price} />
+              {
+                this.state.items.map((item) => <FavItem 
+                title= {item.title} 
+                pick= {item.images[0]}
+                brand= {item.brand}
+                price= {item.price} />
+              )
+            }
+
+
+
             </section>
             <div className="product-catalogue__pagination">
               <div className="page-nav-wrapper">
@@ -110,7 +127,8 @@ class Favorite extends Component {
               </div>
             </div>
           </main>
-        </div>);
+        </div>
+      );
     }
   }
 }
