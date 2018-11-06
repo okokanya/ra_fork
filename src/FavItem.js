@@ -8,7 +8,7 @@ const FavItem = ({ title, pick, brand, price }) => (
       <img
         className="item-pic"
         src={pick}
-        alt=""
+        alt="hey"
       />
       <div className="product-catalogue__product_favorite">
         <p />
