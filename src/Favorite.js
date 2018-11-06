@@ -11,15 +11,6 @@ class Favorite extends Component {
       isLoaded: false,
       items: []
     };
-
-    // this.state.items.map((item, i) => {
-    //   let shoeProps = {
-    //     title: this.items.title,
-    //     pick: this.items[0].images[0],
-    //     brand: this.items.brand,
-    //     price: this.items.price
-    //   }
-    // })
   }
 
   componentDidMount() {
@@ -32,9 +23,6 @@ class Favorite extends Component {
             items: result.data
           });
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         error => {
           this.setState({
             isLoaded: true,
@@ -69,7 +57,7 @@ class Favorite extends Component {
             <section className="product-catalogue__head product-catalogue__head_favorite">
               <div className="product-catalogue__section-title">
                 <h2 className="section-name">В вашем избранном</h2>
-                <span className="amount amount_favorite"> 99 товаров</span>
+                <span className="amount amount_favorite">{this.state.items.length} товаров</span>
               </div>
               <div className="product-catalogue__sort-by">
                 <p className="sort-by">Сортировать</p>
@@ -89,9 +77,6 @@ class Favorite extends Component {
                 price= {item.price} />
               )
             }
-
-
-
             </section>
             <div className="product-catalogue__pagination">
               <div className="page-nav-wrapper">

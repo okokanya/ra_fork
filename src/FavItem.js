@@ -5,11 +5,7 @@ import apiConfig from "./apiConfig.js";
 const FavItem = ({ title, pick, brand, price }) => (
   <a className="item-list__item-card item" href="product-card-desktop.html">
     <div className="item-pic-1">
-      <img
-        className="item-pic"
-        src={pick}
-        alt="hey"
-      />
+      <img className="item-pic" src={pick} alt="shoe image" />
       <div className="product-catalogue__product_favorite">
         <p />
       </div>
