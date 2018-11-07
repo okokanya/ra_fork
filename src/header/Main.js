@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MainPage from "../MainPage";
-import Categories from "./Categories";
-import MainProfile from "./MainProfile";
 import headerLogo from "../img/headerLogo.png";
 
 const Main = ({
