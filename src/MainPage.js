@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Featured from "./Featured.js";
 import slider from "./img/slider.jpg";
 import slider180deg from "./img/slider180deg.jpeg";
 
@@ -143,7 +144,9 @@ class MainPage extends Component {
             </div>
           </section>
 
-          <section className="new-deals wave-bottom">
+          <Featured />
+
+          {/* <section className="new-deals wave-bottom">
             <h2 className="h2">Новинки</h2>
             <div className="new-deals__menu">
               <ul className="new-deals__menu-items">
@@ -189,7 +192,7 @@ class MainPage extends Component {
               </p>
               <h3 className="h3">5 950 ₽</h3>
             </div>
-          </section>
+          </section> */}
 
           <section className="sales-and-news wave-bottom">
             <h2 className="h2">акции и новости</h2>

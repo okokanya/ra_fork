@@ -19,6 +19,7 @@ class App extends Component {
         <BrowserRouter>
         <div>
           <Header />
+          
           <Switch>
             <Route path="/favorite" component={Favorite} />
             <Route path="/order" component={Order} />

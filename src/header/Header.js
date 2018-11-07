@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import MainProfile from "./MainProfile";
 import Main from "./Main";
 import Categories from "./Categories";
@@ -84,7 +85,7 @@ class Header extends React.Component {
                 className="main-menu__item main-menu__item_women"
                 onClick={this.handleMainCategories}
               >
-                <a href="#">Женская обувь</a>
+                <Link to="./catalogue" href="#">Женская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_men"

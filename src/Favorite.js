@@ -74,7 +74,9 @@ class Favorite extends Component {
                 title= {item.title} 
                 pick= {item.images[0]}
                 brand= {item.brand}
-                price= {item.price} />
+                price= {item.price}
+                id= {item.id}
+                sizes= {item.sizes} />
               )
             }
             </section>
