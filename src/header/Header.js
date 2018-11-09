@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 import MainProfile from "./MainProfile";
 import Main from "./Main";
 import Categories from "./Categories";
@@ -74,6 +74,8 @@ class Header extends React.Component {
         />
         <nav className="main-menu">
           <div className="wrapper">
+          <BrowserRouter>
+
             <ul className="main-menu__items">
               <li
                 className="main-menu__item main-menu__item_sales"
@@ -85,19 +87,19 @@ class Header extends React.Component {
                 className="main-menu__item main-menu__item_women"
                 onClick={this.handleMainCategories}
               >
-                <Link to="./catalogue" href="#">Женская обувь</Link>
+                <Link to="./catalogue">Женская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_men"
                 onClick={this.handleMainCategories}
               >
-                <a href="#">Мужская обувь</a>
+                <Link to="./catalogue">Мужская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_kids"
                 onClick={this.handleMainCategories}
               >
-                <a href="#">Детская обувь</a>
+                <Link to="./catalogue">Детская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_accessories"
@@ -124,6 +126,8 @@ class Header extends React.Component {
                 <a href="#">Новинки</a>
               </li>
             </ul>
+            </BrowserRouter>
+
           </div>
         </nav>
         <Categories isPanelOpen={this.state.isPanelOpen} />

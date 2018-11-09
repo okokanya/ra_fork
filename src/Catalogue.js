@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import CataogueFilters from "./CatalogueFilters";
 import CatalogueItem from "./CatalogueItem";
 import apiConfig from "./apiConfig.js";
+import Catalogue15 from './Catalogue15';
+import Catalogue13 from './Catalogue13';
+import Catalogue14 from './Catalogue14';
+
+
 
 import styleCatalogue from "./css/styleCatalogue.css";
 
@@ -54,15 +59,17 @@ class Catalogue extends Component {
           <CataogueFilters />
           <section className="product-catalogue__item-list">
             {this.state.items.map(item => (
-              <CatalogueItem
-                categoryId={item.categoryId}
-                title={item.title}
-                pick={item.images[0]}
-                brand={item.brand}
-                price={item.price}
-                id={item.id}
-                sizes={item.sizes}
+
+              <Catalogue13
+              categoryId={item.categoryId}
+              title={item.title}
+              pick={item.images[0]}
+              brand={item.brand}
+              price={item.price}
+              id={item.id}
+              sizes={item.sizes}
               />
+
             ))}
           </section>
           {/* <!-- Пагинация под каталогом --> */}
