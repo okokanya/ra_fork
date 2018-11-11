@@ -35,17 +35,15 @@ class Catalogue extends Component {
           });
         }
       );
-  }
+  };
 
   componentDidMount() {
     this.getData(this.props);
   }
 
-  componentWillUpdate(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.getData(nextProps);
   }
-
-
 
   render() {
     return (
