@@ -15,8 +15,8 @@ class Catalogue extends Component {
   }
 
   getData = props => {
-    const categoryFilter = props.match.category
-      ? `?categoryId=${props.match.category}`
+    const categoryFilter = props.match.params.category
+      ? `?categoryId=${props.match.params.category}`
       : ``;
 
     fetch(apiConfig.base + apiConfig.products + categoryFilter)
