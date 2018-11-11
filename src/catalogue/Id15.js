@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const CatalogueItem = ({
+const Id15 = ({
   title,
   pick,
   brand,
@@ -41,4 +41,4 @@ const CatalogueItem = ({
   }
 };
 
-export default CatalogueItem;
+export default Id15;

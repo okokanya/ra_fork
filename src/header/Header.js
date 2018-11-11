@@ -87,19 +87,19 @@ class Header extends React.Component {
                 className="main-menu__item main-menu__item_women"
                 onClick={this.handleMainCategories}
               >
-                <Link to="./catalogue">Женская обувь</Link>
+                <Link to="catalogue/id13">Женская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_men"
                 onClick={this.handleMainCategories}
               >
-                <Link to="./catalogue">Мужская обувь</Link>
+                <Link to="/catalogue/id14">Мужская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_kids"
                 onClick={this.handleMainCategories}
               >
-                <Link to="./catalogue">Детская обувь</Link>
+                <Link to="/catalogue/id15">Детская обувь</Link>
               </li>
               <li
                 className="main-menu__item main-menu__item_accessories"

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const CatalogueItem15 = ({
+const CatalogueItem = ({
   title,
   pick,
   brand,
@@ -9,7 +9,6 @@ const CatalogueItem15 = ({
   id,
   categoryId
 }) => {
-  if (categoryId == 15) {
   return (
     <a className="item-list__item-card item" href="product-card-desktop.html">
       <div className="item-pic">
@@ -36,9 +35,7 @@ const CatalogueItem15 = ({
         </div>
       </div>
     </a>
-  )} else {
-    return null
-  }
+  )
 };
 
-export default CatalogueItem15;
+export default CatalogueItem;

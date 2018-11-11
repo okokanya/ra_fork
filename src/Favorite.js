@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styleFavorite from "./css/styleFavorite.css";
 import FavItem from "./FavItem";
 import apiConfig from "./apiConfig.js";
+import products from "./data/products.json";
 
 class Favorite extends Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class Favorite extends Component {
 
   componentDidMount() {
     fetch(apiConfig.base + apiConfig.products)
-      .then(res => res.json())
+    // fetch(products)
+
+    .then(res => res.json())
       .then(
         result => {
           this.setState({
