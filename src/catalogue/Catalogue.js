@@ -14,9 +14,12 @@ class Catalogue extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log(this.props);
-    fetch(apiConfig.base + apiConfig.products)
+  getData = props => {
+    const categoryFilter = props.match.category
+      ? `?categoryId=${props.match.category}`
+      : ``;
+
+    fetch(apiConfig.base + apiConfig.products + categoryFilter)
       .then(res => res.json())
       .then(
         result => {
@@ -33,6 +36,16 @@ class Catalogue extends Component {
         }
       );
   }
+
+  componentDidMount() {
+    this.getData(this.props);
+  }
+
+  componentWillUpdate(nextProps) {
+    this.getData(nextProps);
+  }
+
+
 
   render() {
     return (
@@ -55,13 +68,13 @@ class Catalogue extends Component {
           <section className="product-catalogue__item-list">
             {this.state.items.map(item => (
               <CatalogueItem
-              categoryId={item.categoryId}
-              title={item.title}
-              pick={item.images[0]}
-              brand={item.brand}
-              price={item.price}
-              id={item.id}
-              sizes={item.sizes}
+                categoryId={item.categoryId}
+                title={item.title}
+                pick={item.images[0]}
+                brand={item.brand}
+                price={item.price}
+                id={item.id}
+                sizes={item.sizes}
               />
             ))}
           </section>
