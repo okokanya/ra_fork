@@ -6,6 +6,7 @@ import Id15 from './Id15';
 import Id13 from './Id13';
 import Id14 from './Id14';
 import styleCatalogue from "../css/styleCatalogue.css";
+import products from '../data/products.json';
 
 class Catalogue extends Component {
   constructor(props) {
@@ -18,7 +19,9 @@ class Catalogue extends Component {
   }
 
   componentDidMount() {
-    fetch(apiConfig.base + apiConfig.products)
+    // fetch(apiConfig.base + apiConfig.products)
+    fetch(products)
+
       .then(res => res.json())
       .then(
         result => {
