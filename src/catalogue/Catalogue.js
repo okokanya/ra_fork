@@ -41,7 +41,7 @@ class Catalogue extends Component {
     this.getData(this.props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillUpdate(nextProps) {
     this.getData(nextProps);
   }
 

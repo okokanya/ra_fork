@@ -74,7 +74,6 @@ class Header extends React.Component {
         />
         <nav className="main-menu">
           <div className="wrapper">
-          <BrowserRouter>
 
             <ul className="main-menu__items">
               <li
@@ -126,8 +125,6 @@ class Header extends React.Component {
                 <a href="#">Новинки</a>
               </li>
             </ul>
-            </BrowserRouter>
-
           </div>
         </nav>
         <Categories isPanelOpen={this.state.isPanelOpen} />
