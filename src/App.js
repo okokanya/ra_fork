@@ -27,8 +27,9 @@ class App extends Component {
             <Route path="/favorite" component={Favorite} />
             <Route path="/order" component={Order} />
             <Route path="/orderdone" component={OrderDone} />
-            <Route path="/catalogue" component={Catalogue} />
             <Route path="/catalogue/:category" component={Catalogue} />
+            <Route path="/catalogue" exact component={Catalogue} />
+
 
             <Route path="/product" component={ProductCardDesktop} />
             <Route exact path="/" component={MainPage} />

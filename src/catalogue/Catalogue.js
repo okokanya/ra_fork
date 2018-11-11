@@ -15,6 +15,7 @@ class Catalogue extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     fetch(apiConfig.base + apiConfig.products)
       .then(res => res.json())
       .then(
