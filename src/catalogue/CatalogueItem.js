@@ -29,10 +29,10 @@ const CatalogueItem = ({
           Производитель: <span className="producer">{brand}</span>
         </p>
         <p className="item-price">{price}</p>
-        <div className="sizes">
+        {/* <div className="sizes">
           <p className="sizes__title">Размеры в наличии:</p>
           <p className="sizes__avalible">36, 37, 38, 39, 40, 41, 42</p>
-        </div>
+        </div> */}
       </div>
     </a>
   )

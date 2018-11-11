@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import CataogueFilters from "./CatalogueFilters";
 import CatalogueItem from "./CatalogueItem";
 import apiConfig from "../apiConfig.js";
-import Id15 from './Id15';
-import Id13 from './Id13';
-import Id14 from './Id14';
 import styleCatalogue from "../css/styleCatalogue.css";
-import products from '../data/products.json';
 
 class Catalogue extends Component {
   constructor(props) {
@@ -19,9 +15,7 @@ class Catalogue extends Component {
   }
 
   componentDidMount() {
-    // fetch(apiConfig.base + apiConfig.products)
-    fetch(products)
-
+    fetch(apiConfig.base + apiConfig.products)
       .then(res => res.json())
       .then(
         result => {
@@ -59,7 +53,7 @@ class Catalogue extends Component {
           <CataogueFilters />
           <section className="product-catalogue__item-list">
             {this.state.items.map(item => (
-              <Id14
+              <CatalogueItem
               categoryId={item.categoryId}
               title={item.title}
               pick={item.images[0]}
