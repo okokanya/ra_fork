@@ -24,6 +24,7 @@ class App extends Component {
           <Header />
           
           <Switch>
+            <Route path="/product/:id" component={ProductCardDesktop} />
             <Route path="/favorite" component={Favorite} />
             <Route path="/order" component={Order} />
             <Route path="/orderdone" component={OrderDone} />

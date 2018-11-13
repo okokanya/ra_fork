@@ -66,6 +66,7 @@ class Catalogue extends Component {
           <section className="product-catalogue__item-list">
             {this.state.items.map(item => (
               <CatalogueItem
+                key={item.id}
                 categoryId={item.categoryId}
                 title={item.title}
                 pick={item.images[0]}

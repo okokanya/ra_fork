@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const Id15 = ({
+const Id13 = ({
   title,
   pick,
   brand,
@@ -9,7 +9,7 @@ const Id15 = ({
   id,
   categoryId
 }) => {
-  if (categoryId == 15) {
+  if (categoryId == 13) {
   return (
     <a className="item-list__item-card item" href="product-card-desktop.html">
       <div className="item-pic">
@@ -41,4 +41,4 @@ const Id15 = ({
   }
 };
 
-export default Id15;
+export default Id13;

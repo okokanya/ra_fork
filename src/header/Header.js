@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MainProfile from "./MainProfile";
 import Main from "./Main";
 import Categories from "./Categories";

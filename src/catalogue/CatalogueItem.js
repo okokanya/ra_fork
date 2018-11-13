@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 
 const CatalogueItem = ({
   title,
@@ -10,7 +12,7 @@ const CatalogueItem = ({
   categoryId
 }) => {
   return (
-    <a className="item-list__item-card item" href="product-card-desktop.html">
+    <Link className="item-list__item-card item" to={id}>
       <div className="item-pic">
         <img
           // className="item-pic-4"
@@ -34,7 +36,7 @@ const CatalogueItem = ({
           <p className="sizes__avalible">36, 37, 38, 39, 40, 41, 42</p>
         </div> */}
       </div>
-    </a>
+    </Link>
   )
 };
 
